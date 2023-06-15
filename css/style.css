@@ -85,6 +85,17 @@ body {
   margin-bottom: var(--gapSize);
 }
 
+/* Responsiveness */
+
+@media (max-width: 1007px) {
+  .containerBox {
+    flex-direction: column;
+  }
+  .itemCol {
+    width: 95%;
+  }
+}
+
 /*------------------------------ Button Stylings ------------------------------*/
 
 .buttonLink {
@@ -191,6 +202,10 @@ body {
 
 /*------------------------------ Footer ------------------------------*/
 
+footer {
+  width: 100%;
+}
+
 .footer {
   margin: 0 10%;
   padding: 50px 0;
@@ -198,6 +213,13 @@ body {
 
   display: flex;
   align-items: flex-start;
+}
+
+/* Responsiveness */
+
+@media (max-width: 1007px) {
+  .footer {
+  }
 }
 
 footer .w-20 {
