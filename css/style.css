@@ -1,0 +1,96 @@
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+/* Hero Banner */
+.hero {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url(../img/0480018e-9669-4513-bf60-76edd80d248d.jpg);
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+}
+
+/* Contents */
+.content {
+  margin: auto;
+  width: 100%;
+}
+
+/* Container */
+
+.containerBox {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--pureWhite);
+  padding: var(--gapSize);
+  gap: var(--gapSize);
+  margin-top: var(--gapSize);
+  margin-bottom: var(--gapSize);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White Column */
+.whiteItem {
+  background-color: var(--white);
+}
+
+/* Black Column */
+.darkItem {
+  background-color: var(--balck);
+}
+
+/* Column Stylings */
+
+.itemCol {
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Image Stylings */
+.itemCol .fullImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fullImage img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Content Stylings */
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: calc(var(--gapSize) * 2);
+  height: 60%;
+}
+
+.itemContent h2 {
+  text-transform: uppercase;
+  margin-bottom: var(--gapSize);
+}
+
+/* Button Stylings */
+.buttonLink {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonLink button {
+  padding: 1em 2em;
+  border-radius: 200rem;
+  background: transparent;
+  cursor: pointer;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body onload="init()">
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="bg"></div>
+    </section>
+
+    <!-- Contents -->
+    <section class="content">
+      <!-- First container -->
+      <div class="containerBox">
+        <div class="itemCol whiteItem">
+          <div class="itemContent">
+            <h2>Taste the sense of timeliness</h2>
+            <p>Your Dreams to Shine</p>
+          </div>
+          <div class="buttonLink">
+            <button>Learn More</button>
+          </div>
+        </div>
+        <div class="itemCol darkItem">
+          <div class="fullImage">
+            <img src="./img/mockup/wallhaven-dpl3x3.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Second container -->
+      <div class="containerBox">
+        <div class="itemCol darkItem"></div>
+        <div class="itemCol whiteItem">
+          <div class="itemContent">
+            <h2>Find The Perfect Guidance</h2>
+            <p>Your Dreams to Shine</p>
+          </div>
+          <div class="buttonLink">
+            <button>Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third container -->
+      <div class="containerBox">
+        <div class="itemCol whiteItem">
+          <div class="itemContent">
+            <h2>
+              Tired? <br />
+              Take a break
+            </h2>
+            <p>Your Dreams to Shine</p>
+          </div>
+          <div class="buttonLink">
+            <button>Learn More</button>
+          </div>
+        </div>
+        <div class="itemCol darkItem"></div>
+      </div>
+
+      <!-- Fourth container -->
+      <div class="containerBox">
+        <div class="itemCol darkItem"></div>
+        <div class="itemCol whiteItem">
+          <div class="itemContent">
+            <h2>Join the startup!</h2>
+            <p>Your Dreams to Shine</p>
+          </div>
+          <div class="buttonLink">
+            <button>Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function init() {
+        new SmoothScroll(document, 120, 12);
+      }
+
+      function SmoothScroll(target, speed, smooth) {
+        if (target === document)
+          target =
+            document.scrollingElement ||
+            document.documentElement ||
+            document.body.parentNode ||
+            document.body; // cross browser support for document scrolling
+
+        var moving = false;
+        var pos = target.scrollTop;
+        var frame =
+          target === document.body && document.documentElement
+            ? document.documentElement
+            : target; // safari is the new IE
+
+        target.addEventListener("mousewheel", scrolled, { passive: false });
+        target.addEventListener("DOMMouseScroll", scrolled, { passive: false });
+
+        function scrolled(e) {
+          e.preventDefault(); // disable default scrolling
+
+          var delta = normalizeWheelDelta(e);
+
+          pos += -delta * speed;
+          pos = Math.max(
+            0,
+            Math.min(pos, target.scrollHeight - frame.clientHeight)
+          ); // limit scrolling
+
+          if (!moving) update();
+        }
+
+        function normalizeWheelDelta(e) {
+          if (e.detail) {
+            if (e.wheelDelta)
+              return (e.wheelDelta / e.detail / 40) * (e.detail > 0 ? 1 : -1);
+            // Opera
+            else return -e.detail / 3; // Firefox
+          } else return e.wheelDelta / 120; // IE,Safari,Chrome
+        }
+
+        function update() {
+          moving = true;
+
+          var delta = (pos - target.scrollTop) / smooth;
+
+          target.scrollTop += delta;
+
+          if (Math.abs(delta) > 0.5) requestFrame(update);
+          else moving = false;
+        }
+
+        var requestFrame = (function () {
+          // requestAnimationFrame cross browser
+          return (
+            window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (func) {
+              window.setTimeout(func, 1000 / 50);
+            }
+          );
+        })();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+:root {
+  /* Corporate Colors */
+  --primary: rgb(0, 255, 85);
+  --secondary: rgb(0, 115, 255);
+  --complimentary: rgb(164, 193, 21);
+
+  /* Colors */
+  --balck: rgba(0, 0, 0, 1);
+  --white: rgba(245, 245, 247, 1);
+  --pureWhite: rgba(255, 255, 255, 1);
+
+  /* Spacings */
+  --gapSize: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Font Sizes (1.61803399) Golden ratio format */
+p {
+  font-size: 16px;
+  line-height: calc(1.5 * 16px);
+}
+h4 {
+  font-size: 26px;
+  line-height: calc(1.5 * 26px);
+}
+h3 {
+  font-size: 42px;
+  line-height: calc(1.5 * 42px);
+}
+h2 {
+  font-size: 68px;
+  line-height: calc(1.5 * 68px);
+}
+h1 {
+  font-size: 110px;
+  line-height: calc(1.5 * 110px);
+}
+
+/* Font size ends */
+
+/* Styling for scrollbar */
+* {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
