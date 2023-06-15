@@ -1,11 +1,12 @@
 :root {
   /* Corporate Colors */
-  --primary: rgb(0, 255, 85);
+  --primary: rgb(71, 35, 253);
   --secondary: rgb(0, 115, 255);
   --complimentary: rgb(164, 193, 21);
 
   /* Colors */
-  --balck: rgba(0, 0, 0, 1);
+  --blackSoft: rgb(81, 81, 81);
+  --black: rgba(0, 0, 0, 1);
   --white: rgba(245, 245, 247, 1);
   --pureWhite: rgba(255, 255, 255, 1);
 
